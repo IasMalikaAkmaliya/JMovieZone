@@ -1,0 +1,698 @@
+/*google font*/
+@import url('https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  "SUSE Mono", sans-serif;
+}
+
+.section-content{
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: var(--site-max-width);
+}
+
+.section-title{
+    text-align: center;
+    padding: 40px 0 80px;
+    text-transform: uppercase;
+    font-size: x-large;
+}
+
+/*untuk garis dibwh judul*/
+.section-title:after{
+    content:"";
+    width: 500px; /*untuk panjang garis dibwh judul*/
+    height: 5px;
+    display: block; /*blok untuk garis dibwh judul*/
+    margin: 10px auto 0; /*jarak untuk garisnya*/
+    border-radius: 15px; /*lekuk untuk garis dibwh judul*/
+    background: rgb(235, 104, 104);
+}
+
+/*navbar style*/
+header{
+    position: fixed; /*supaya header nya stay diatas pas di scrool*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1000; /*biar navbar gk ketutupan elemen pas di scroll*/
+}
+
+/*untuk navar kesamping atau dipojok*/
+header .navbar{
+    display: flex; /*supaya sejajar*/
+    align-items: center; 
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between; /*untuk jarak dari elemen yg lain*/
+}
+
+/*judul dipojok kiri*/
+.navbar .logo{
+    font-size: 2.1rem; /*untuk ukuran*/
+    font-weight: 600; /*untuk besarnya juga*/
+}
+
+.navbar .menu-link{
+    display: flex; /*supaya navbar sejajar*/
+    gap: 40px; /*jarak nya*/
+    list-style: none;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease; /*biar diarahin kursor ada geraknya*/
+}
+
+.navbar a:hover{
+    background: linear-gradient(90deg, #ff9aa2,#ff6b6b); /*warna ketika kursor diarahin ke navbar*/
+    border-radius: 5px;
+    text-decoration: underline;
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown .drop-btn{
+    cursor: pointer;
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown .drop-btn:hover{
+    display: block;
+    text-decoration: underline;
+    background: linear-gradient(90deg, #ff9aa2,#ff6b6b);
+}
+
+.dropdown a{
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown .dropcontent{
+    position: absolute;
+    min-width: 100px;
+    border-radius: 5px;
+    display: none;
+}
+
+.dropdown:hover .dropcontent{
+    display: block;
+}
+
+.dropdown a:hover{
+    background-color: rgb(238, 180, 180);
+    border-radius: 15px;
+}
+
+/*bagian home*/
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: center; /* opsional: kalau mau teks di tengah */
+  color: white; /* biar teks kontras */
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url("https://i.pinimg.com/736x/cb/8d/b2/cb8db24b9cf38da0273b7f6d8dec590d.jpg") center/cover no-repeat;
+  filter: blur(3px) brightness(0.8);
+  z-index: 0;
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section .content{
+    color: white; /*warna font di layar*/
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*bagian let's find*/
+.hero-section .content h1{
+    font-size: 3rem;
+    max-width: 600px;
+}
+
+/*bagian watching movies*/
+.hero-section .content p{
+    font-weight: 300;
+    margin-top: 15px;
+    max-width: 600px;
+}
+
+/*button yg start now*/
+.hero-section .content button{
+    color: black;
+    background: whitesmoke;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 38px;
+    padding: 12px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    display: inline-block;
+    width: auto;
+}
+
+/*ketika kursor diarahin ke button ada warna*/
+.hero-section .content button:hover{
+    color: rgb(224, 217, 222);
+    background: linear-gradient(90deg, #ff9aa2,#ff6b6b);
+}
+
+/*bagian about style*/
+.about-section{
+    padding: 40px 0 80px;
+    background: linear-gradient(120deg, #9ad9ff, #ff9aa2);
+    box-shadow: inset 0 0 40px rgba(100, 170, 255, 0.2);
+    color: #1e3a5f;
+}
+
+.about-section .section-content{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-section .about-details .section-title{
+    padding: 0;
+    font-size: xx-large;
+}
+
+.about-section .about-details .text{
+    line-height: 40px;
+    margin: 50px 0 30px;
+    text-align: center;
+    font-size:large;
+}
+
+.about-extra {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 40px;
+  margin: 60px auto 0;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+.about-extra .left-side,
+.about-extra .right-side {
+  flex: 1;
+  background: #f3faff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 100, 200, 0.15);
+}
+
+.about-extra .left-side:hover,
+.about-extra .right-side:hover {
+  transform: scale(1.03);
+  background: linear-gradient(90deg, #ff9aa2, #9ad9ff);
+  box-shadow: 0 6px 14px rgba(0, 120, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.about-extra .right-side p{
+    line-height: 30px;
+    text-align: justify;
+    font-size:large;
+}
+
+.about-extra h3 {
+  text-align: center;
+  font-size: medium;
+  color: rgb(90, 18, 18);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.about-extra ul {
+  list-style: square;
+  font-size: large;
+  padding-left: 20px;
+  line-height: 40px;
+}
+
+/*bagian film style*/
+.film-section {
+  flex: 2;
+  background: #e1f1ff;
+  color: #1e3a5f;
+  padding: 40px 20px 80px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+}
+
+.film-section .section-title{
+    padding: 20px 30px;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 250px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img{
+    width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content{
+    padding: 16px;
+}
+
+.card-content h3{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.card-content .btn{
+   display: inline-block;
+   padding: 8px 16px;
+   text-decoration: none;
+   border-radius: 40px;
+   margin-top: 16px;
+   color: #1d1c1c;
+}
+
+.film-section button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    border: 2px solid rgb(146, 139, 139);
+    background: transparent;
+    color: rgb(185, 196, 196);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.film-section button:hover{
+    border:none;
+    background: linear-gradient(90deg, #a2d9ff, #74b9ff, #d6eaff);
+    box-shadow: 0 0;
+    transform: translate(3px, 3px);
+    transition: all 200ms ease;
+}
+
+/* Layout utama untuk film dan sidebar */
+.film-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: nowrap; /* Biar card dan sidebar sejajar, tidak turun */
+}
+
+/* Biar film section dan sidebar ukurannya seimbang */
+
+.trailer-sidebar {
+  flex: 1;
+  background: #e1f1ff;
+  color: #1e3a5f;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: fit-content; /* Biar tingginya ngikut isi */
+  box-sizing: border-box;
+}
+
+.trailer-sidebar h2 {
+  color: black;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.zoom-text {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  animation: zoomIn 2.5s ease-in-out infinite alternate;
+}
+
+.zoom-text:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Biar iframe video responsif */
+.trailer-sidebar iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.trailer-sidebar iframe:hover {
+  transform: scale(1.05); /* membesar 5% pas diarahi */
+}
+
+/*bagian rekomendasi*/
+.actors-section{
+    background: white; /* pake background biar gk nyatu sama foto di body */
+    padding: 40px 0 80px;
+    background: linear-gradient(120deg, #9ad9ff, #ff9aa2);
+    box-shadow: inset 0 0 40px rgba(100, 170, 255, 0.2);
+    color: #1e3a5f;
+}
+
+.actors-section .section-title{
+    padding: 20px 30px;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.actors-section .slider-wrapper{
+    overflow: hidden;
+    margin: 0 60px 50px;
+}
+
+.actors-section .actors{
+    display: flex;
+    padding: 35px;
+    text-align: center;
+    flex-direction: column; /*biar gambar kebawah vertikal*/
+    align-items: center;
+
+}
+
+.actors-section .actors .user-image{
+    width: 180px;
+    height: 180px;
+    object-fit: cover; /*biar ukuran gambar konsisten*/
+    margin-bottom: 50px;
+    border-radius: 50%; /*untuk atur sisi gambar*/
+    transition: transform 0.3s ease;
+}
+
+.actors-section .actors .user-image:hover {
+  transform: scale(1.3); /* membesar 10% */
+}
+
+.actors-section .actors .name{
+    margin-bottom: 16px;
+    font-size: medium;
+    transition: transform 0.3s ease;
+}
+
+.actors-section .actors .name:hover{
+    transform: scale(1.2);
+}
+
+.actors-section .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    background: rgb(107, 12, 12);
+}
+
+.actors-section .swiper-slide-button{
+    margin-top: -50px; /*jarak dari pagination ato titik kecil ke text*/
+    color: rgb(51, 46, 46);
+    padding: 50px;
+    transition: 0.3s ease;
+}
+
+.actors-section .swiper-slide-button:hover{
+    color: rgb(235, 13, 13);
+}
+
+.gallery-section{
+  padding: 50px 0 100px;
+  background: linear-gradient(120deg, #9ad9ff, #ff9aa2);
+  color: #1e3a5f;
+}
+
+.text-title {
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.text-title h1 {
+  font-size: 100%;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 15px 0;
+}
+
+.text-title hr {
+  border: none;
+  height: 3px;
+  width: 80%; /* agar garis tidak menempel ke tepi */
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.section-content{
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: var(--site-max-width);
+}
+
+.section-title{
+    text-align: center;
+    padding: 40px 0 80px;
+    text-transform: uppercase;
+    font-size: x-large;
+}
+
+/*untuk garis dibwh judul*/
+.section-title:after{
+    content:"";
+    width: 200px; /*untuk panjang garis dibwh judul*/
+    height: 5px;
+    display: block; /*blok untuk garis dibwh judul*/
+    margin: 10px auto 0; /*jarak untuk garisnya*/
+    border-radius: 15px; /*lekuk untuk garis dibwh judul*/
+    background: rgb(235, 104, 104);
+}
+
+/* Card container */
+.card-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* Card Flip */
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  aspect-ratio: 2 / 3; /* biar proporsi card-nya kayak poster film */
+  perspective: 1000px;
+}
+
+.flip-card .card-content h3 {
+  padding: 15px 15px;
+  text-align: center; /* biar rata kanan-kiri */
+  color: #333; /* warna teks netral */
+  font-weight: bold;
+  font-weight: 500; /* sedikit tegas tapi nggak berat */
+}
+
+.flip-card .card-content p{
+  padding: 10px 15px;
+  text-align: justify; /* biar rata kanan-kiri */
+  font-size: 16px; /* ukuran sedang */
+  line-height: 1.5; /* biar jarak antarbaris enak dibaca */
+  color: #333; /* warna teks netral */
+  font-weight: 500; /* sedikit tegas tapi nggak berat */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Depan */
+.flip-card-front {
+  background-color: #ffffff;
+  color: black;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* biar memenuhi card tapi proporsi poster tetap pas */
+  object-position: center;
+  border-radius: 10px;
+}
+
+/* Belakang */
+.flip-card-back {
+  background: linear-gradient(135deg, #6ecbff, #ff7b7b);
+  color: rgb(93, 133, 133);
+  transform: rotateY(180deg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*bagian footer*/
+.footer-section{
+  padding: 20px 40px;
+  background: white;
+}
+
+.footer-section .section-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.footer-section .social-link-list{
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.footer-section .social-link-list .social-link{
+  font-size: x-large;
+  color: black;
+}
+
+.footer-section .social-link-list .social-link:hover{
+  color: rgb(235,145,123);
+}
+
+.footer-section .copy-text .separator{
+  margin: 0 5px;
+  color: black;
+}
+
+.footer-section .copy-text .copy-link {
+  color: black;
+  text-decoration: none;
+}
+
+.footer-section .copy-text .copy-link:hover {
+  text-decoration: underline;
+}
+
+
+@media screen and (max-width:640px){
+    .hero-section .content{
+        gap: 50px;
+        text-align: center;
+        padding: 30px 20px 20px;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .about-section .section-content{
+        gap: 70px;
+        flex-direction: column;
+    }
+    .actors-section .slider-wrapper{
+        margin: 0 0 30px;
+    }
+    .actors-section .swiper-slide-button{
+        display: none;
+    }
+    .footer-section .section-content{
+      flex-direction: column;
+      gap: 20px;
+    }
+}
