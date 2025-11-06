@@ -1,0 +1,129 @@
+/*google font*/
+@import url('https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family:  "SUSE Mono", sans-serif;
+}
+
+header{ 
+    position: fixed; /*supaya header nya stay diatas pas di scrool*/ 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    padding: 20px; 
+    z-index: 1000; /*biar navbar gk ketutupan elemen pas di scroll*/ 
+} 
+
+/*untuk navar kesamping atau dipojok*/ 
+header .navbar{ 
+    display: flex; /*supaya sejajar*/ 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    justify-content: space-between; /*untuk jarak dari elemen yg lain*/ 
+} 
+
+/*judul dipojok kiri*/ 
+.navbar .logo{ 
+    font-size: 2.1rem; /*untuk ukuran*/ 
+    font-weight: 600; /*untuk besarnya juga*/ 
+} 
+
+.navbar .menu-link{ 
+    display: flex; /*supaya navbar sejajar*/ 
+    gap: 40px; /*jarak nya*/ 
+    list-style: none; 
+} 
+
+.navbar a{ 
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: transform 0.3s ease; /*biar diarahin kursor ada geraknya*/ 
+} 
+
+.navbar a:hover{ 
+    background: linear-gradient(90deg, #ff9aa2,#ff6b6b); /*warna ketika kursor diarahin ke navbar*/ 
+    border-radius: 5px; 
+    text-decoration: underline; 
+}
+
+/* --- Bagian Artikel --- */ 
+.artikel-section { 
+    padding: 50px 0 100px; 
+    background: linear-gradient(120deg, #9ad9ff, #ff9aa2); 
+    color: #1e3a5f; 
+} 
+
+.artikel-section .artikel-container { 
+    max-width: 900px; 
+    background: rgba(255, 255, 255, 0.1); /* kotak semi-transparan */ 
+    padding: 30px; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    margin: 100px auto 0;
+} 
+
+.artikel-section .artikel-content h3 { 
+    font-size: 2rem; 
+    color: #1e3a5f; 
+    text-align: center; 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+} 
+
+.artikel-section .artikel-content p { 
+    text-align: justify; 
+    line-height: 1.8; 
+    font-size: 1.05rem; 
+    color: #2C2C54;
+    margin-bottom: 20px; 
+} 
+
+.artikel-section .artikel-container:hover { 
+    transform: scale(1.01); 
+    transition: transform 0.3s ease; 
+} 
+
+/* Responsif di layar kecil */ 
+@media (max-width: 768px) {
+  /* Supaya kontainer artikel nggak terlalu mepet */
+  .artikel-section .artikel-container {
+    padding: 20px;
+    margin: 120px 20px 0; /* biar ada jarak dari tepi layar */
+  }
+
+  .artikel-section .artikel-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .artikel-section .artikel-content p {
+    font-size: 0.95rem;
+  }
+
+  /* Navbar jadi vertikal (stack) */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar .menu-link {
+    flex-direction: column; /* menu jadi ke bawah */
+    gap: 15px;
+    text-align: center;
+  }
+
+  .navbar .logo {
+    font-size: 1.8rem;
+  }
+
+  header {
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.4); /* biar tetap kelihatan di atas */
+    backdrop-filter: blur(5px); /* efek kaca */
+  }
+}

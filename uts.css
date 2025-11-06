@@ -673,26 +673,90 @@ header .navbar{
 }
 
 
-@media screen and (max-width:640px){
-    .hero-section .content{
-        gap: 50px;
-        text-align: center;
-        padding: 30px 20px 20px;
-        flex-direction: column-reverse;
-        justify-content: center;
-    }
-    .about-section .section-content{
-        gap: 70px;
-        flex-direction: column;
-    }
-    .actors-section .slider-wrapper{
-        margin: 0 0 30px;
-    }
-    .actors-section .swiper-slide-button{
-        display: none;
-    }
-    .footer-section .section-content{
-      flex-direction: column;
-      gap: 20px;
-    }
+@media screen and (max-width: 768px) {
+  /* Navbar jadi kolom */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .navbar .menu-link {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navbar .logo {
+    font-size: 1.8rem;
+  }
+
+  /* Hero section */
+  .hero-section {
+    height: auto;
+    padding: 120px 20px 80px;
+    text-align: center;
+  }
+
+  .hero-section .content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section .content p {
+    font-size: 1rem;
+  }
+
+  .hero-section .content button {
+    font-size: 0.9rem;
+    padding: 10px 25px;
+  }
+
+  /* About section */
+  .about-section .section-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .about-extra {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Film layout */
+  .film-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .film-section {
+    width: 100%;
+  }
+
+  .trailer-sidebar {
+    width: 100%;
+  }
+
+  /* Card film */
+  .card {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  /* Gallery section */
+  .flip-card {
+    width: 200px;
+  }
+
+  /* Footer */
+  .footer-section .section-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
 }
